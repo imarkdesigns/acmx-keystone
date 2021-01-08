@@ -1,0 +1,15 @@
+//* Import Common Styles
+@import "common/fonts",
+        "common/mixins",
+        "common/global";
+
+//* Import Components Styles
+@import "components/header",
+        "components/menu",
+        "components/footer",
+        "components/router";
+
+//* Import Resets Styles
+@import "common/reset-wp",
+        "common/reset-uikit",
+        "common/reset-wpforms";

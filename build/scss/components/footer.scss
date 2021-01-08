@@ -1,0 +1,130 @@
+[data-globals="footer"] {
+    background: #1A1A1A url('#{$img}/img-bg-footer.jpg') no-repeat right top / cover;
+
+    .dg-footer-locations {
+        display: flex;
+        flex-flow: column wrap;
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        .dg-footer-location dl {
+            color: #FFF;
+            text-align: center;
+
+            dt {
+                font-size: 15px;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 15px;
+            }
+
+            dd {
+                font-size: 13px;
+                font-weight: 300;
+            }
+
+        }
+
+        .dg-footer-subscriptions {
+            margin-top: 30px;
+
+            h4 {
+                font-size: 15px;
+                font-weight: bold;
+                text-transform: uppercase;
+                text-align: center;
+
+                small {
+                    font-size: 13px;
+                    font-weight: 300;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+
+    .dg-footer-legal {
+        background-color: #1A1A1A;
+        font-size: 13px;
+        font-weight: 300;
+        color: #FFF;
+        min-height: 80px;
+        margin: 0 -15px;
+        padding: 15px;
+
+        .dg-footer-legal-copyright {
+            margin-bottom: 15px;
+        }
+
+        .dg-footer-legal-links .dg-footer-legal-link {
+            color: #FFF;
+            margin-left: 15px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    @media ( min-width: 640px ) {
+
+        .dg-footer-locations {
+            align-items: center;
+            justify-content: center;
+
+            .dg-footer-location {
+                display: flex;
+                margin-left: -60px;
+
+                dl {
+                    margin-top: 0;
+                    padding-left: 60px;
+                }
+            }
+        }
+
+        .dg-footer-legal {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .dg-footer-legal-copyright {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+
+    @media ( min-width: 960px ) {
+
+        .dg-footer-locations {
+            flex-flow: row;
+            align-items: start;
+            justify-content: flex-start;
+            padding-top: 90px;
+            padding-bottom: 90px;
+
+            .dg-footer-location {
+                dl {
+                    text-align: left;
+                }
+            }
+
+            .dg-footer-subscriptions {
+                margin-top: 0;
+                margin-left: 60px;
+
+                h4 {
+                    text-align: left;
+                }
+            }
+        }
+
+        .dg-footer-legal {
+            margin: 0 -40px;
+            padding: 0 40px;
+        }
+
+    }
+
+}

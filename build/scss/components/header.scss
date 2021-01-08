@@ -1,0 +1,84 @@
+.hero-home {
+    position: relative;
+
+    // Canvas
+    canvas {
+        height: 100vh;
+        max-height: 667px;
+    }
+
+    // Overlay Text
+    .uk-overlay-primary {
+        background-color: rgba(#000, .20);
+        padding-top: 80px;
+    }
+
+    .uk-container {
+        height: 100%;
+    }
+
+    hgroup, h4, h1, p {
+        font-family: $regular;
+        font-size: 17px;
+        font-weight: 300;
+        color: #FFF;
+        margin: 0;
+    }
+
+    h4 {
+        font-size: 19px;
+    }
+
+    h1 {
+        font-size: 39px;
+        text-transform: uppercase;
+        line-height: 1;
+        margin: 15px 0;
+        @include sharpText();
+    }
+
+    @media ( min-width: 960px ) {
+
+        canvas {
+            max-height: 812px;
+        }
+
+        h4 {
+            font-size: 23px;
+        }
+
+        h1 {
+            font-size: 59px;
+        }
+
+        .--stats {
+            display: none;
+        }
+
+    }
+
+    @media ( min-width: 1200px ) {
+
+        .uk-overlay-primary {
+            padding-top: 95px;
+        }
+
+        canvas {
+            max-height: 960px;
+        }
+
+        h1 {
+            font-size: 69px;
+        }
+
+        .--stats {
+            display: block;
+            background-color: rgba($default, .90);
+            @include size(400px,460px);
+            @include rounded('', 5px);
+            z-index: 1;
+        }
+
+    }
+
+}

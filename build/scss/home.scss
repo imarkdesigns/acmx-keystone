@@ -1,0 +1,354 @@
+// Import mixins
+@import "common/mixins";
+
+[data-section="preface"] {
+
+    h3 {
+        font-size: 19px;
+        font-weight: 400;
+        text-transform: uppercase;
+        line-height: 1.2;
+        margin: 0 0 15px;
+    }
+
+    article h2 {
+        font-size: 21px;
+        font-weight: 700;
+        color: #000;
+        line-height: 1.2;
+    }
+
+    dl {
+        margin-top: 0;
+
+        dt {
+            font-size: 21px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 50px !important;
+            margin-bottom: 15px;
+
+            &:first-child {
+                margin-top: 0 !important;
+            }
+        }
+    }
+
+    .text-link {
+        color: #444;
+
+        &::after {
+            content: '\2014';
+            display: inline-block;
+            color: #000;
+            margin-left: 8px;
+            transition: 300ms ease-out;
+        }
+
+        &:focus,
+        &:hover {
+            color: #000;
+
+            &::after {
+                margin-left: 2px;
+            }
+        }
+    }
+}
+
+[data-section="presentation"] {
+    position: relative;
+    padding-top: 0;
+
+    // Grey Background
+    &::after {
+        content: '';
+        position: absolute;
+        top: 160px;
+        left: 0;
+        right: 0;
+        background-color: #F5F5F5;
+        height: 530px;
+        z-index: -1;
+    }
+
+    img {
+        min-height: 320px;
+        object-fit: cover;
+    }
+
+    .uk-dotnav {
+        margin-top: 15px;
+
+        li {
+            a {
+                @include size(35px, 5px);
+                border-radius: 5px;
+            }
+
+            &.uk-active a {
+                background-color: #000;
+            }
+        }
+    }
+
+    .uk-card {
+        background-color: rgba(#FBFBFB, 1);
+        padding: 15px;
+        box-shadow: none;
+
+        h4 {
+            font-size: 15px;
+            text-transform: uppercase;
+            margin: 0 0 10px;
+        }
+
+        .--property-info {
+            font-size: 17px;
+            font-weight: 700;
+            color: #000;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .--property-info .uk-text-meta {
+            display: block;
+            font-weight: 300;
+            font-size: 13px;
+            text-transform: capitalize;
+        }
+
+        .--property-info strong {
+            display: inline-block;
+            font-size: 17px;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        .text-link {
+            font-size: 15px;
+            color: #444;
+
+            &::after {
+                content: '\2014';
+                display: inline-block;
+                color: #000;
+                margin-left: 8px;
+                transition: 300ms ease-out;
+            }
+
+            &:focus,
+            &:hover {
+                color: #000;
+
+                &::after {
+                    margin-left: 2px;
+                }
+            }
+        }
+    }
+
+    @media ( min-width: 960px ) {
+
+        // Grey Background
+        &::after {
+            top: 230px;
+            height: 570px;
+        }
+
+        img {
+            min-height: 420px;
+        }
+
+    }
+
+    @media ( min-width: 1200px ) {
+
+        // Grey Background
+        &::after {
+            top: 230px;
+            height: 610px;
+        }
+
+
+        .uk-slider-container {
+            padding-bottom: 130px;
+        }
+
+        img {
+            min-height: 550px;
+        }
+
+        .uk-slidenav {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(#FBFBFB, .9);
+            @include size(92px);
+            margin: 0;
+            transform: translateY( calc( 50% - 170px ) );
+
+            &-previous {
+                left: -40px;
+            }
+
+            &-next {
+                left: auto;
+                right: -40px;
+            }
+
+            // SVG
+            polyline {
+                stroke-width: 2;
+                stroke: #000 !important;
+            }
+        }
+
+        .uk-dotnav {
+            position: absolute;
+            bottom: 110px;
+            right: 0;
+            z-index: 1;
+        }
+
+        .uk-card {
+            position: absolute;
+            bottom: -130px;
+            left: 100px;
+            @include size(500px, auto);
+            padding: 30px;
+
+            .--property-info {
+                font-size: 19px;
+            }
+
+            .--property-info .uk-text-meta {
+                font-size: 15px;
+            }
+
+            .--property-info strong {
+                font-size: 21px;
+            }
+
+            .text-link {
+                font-size: 17px;
+            }
+        }
+
+    }
+}
+
+[data-section="testimonials"] {
+    padding: 0 0 70px;
+
+    .uk-slider {
+        background-color: #FBFBFB;
+    }
+
+    .uk-slidenav {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        right: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(#FFF, .9); 
+        @include size(68px);
+        margin: 0;
+        border: 1px solid #888;
+        transform: translateY(0);
+
+        &-previous {
+            left: auto;
+            right: 67px;
+        }
+
+        &-next {
+
+        }
+
+        // SVG
+        polyline {
+            stroke-width: 2;
+            stroke: #000 !important;
+        }
+    }    
+
+    img {
+        min-height: 360px;
+        object-fit: cover;
+    }
+
+    .--testimonials-item {
+        padding: 30px;
+
+        h3 {
+            font-size: 19px;
+            font-style: normal;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        blockquote {
+            position: relative;
+            font-size: 15px;
+            font-weight: 600;
+            font-style: normal;
+            color: #000;
+            padding-top: 60px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: url('#{$img}/img-blockquote.png') no-repeat center / contain;
+                @include size(45px);
+            }
+
+            footer {
+                font-weight: 300;
+                font-style: italic;
+                color: #444;
+                margin-top: 30px;
+
+                a {
+                    color: #444;
+                }
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media ( min-width: 1200px ) {
+
+        .--testimonials-item {
+            padding: 90px 100px;
+
+            h3 {
+                padding-left: 90px;
+                margin-bottom: 45px;
+            }
+
+            blockquote {
+                font-size: 21px;
+                padding-top: 0;
+                padding-left: 90px;
+
+                &::before {
+                    @include size(60px);
+                }
+
+                footer {
+                    font-size: 15px;
+                }
+            }
+        }
+
+    }
+
+}

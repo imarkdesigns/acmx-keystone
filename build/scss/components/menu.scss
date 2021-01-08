@@ -1,0 +1,172 @@
+[data-globals="menu"] {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    padding: 0 15px;
+    // border-bottom: 1px solid rgba(#FFF, .5);
+    z-index: 1;
+
+    .uk-logo {
+        display: block;
+        @include size(calc( 150px / 2.25 ), calc( 115px / 2.25 ));
+
+        img {
+            @include size(100%);
+        }
+    }
+
+    .uk-navbar-container {
+        height: 100%;
+
+        > div:nth-child(2) {
+            position: absolute;
+            top: 20px;
+            left: calc( 50% - ( 75px / 2.25 ) );
+            @include size(calc( 150px / 2.25 ), calc( 115px / 2.25 ));
+        }
+
+        .uk-navbar-toggle {
+            color: #FFF;
+            height: 100%;
+        }
+    }
+
+    @media ( min-width: 960px ) {
+        border: 0;
+
+        .uk-logo {
+            @include size(calc( 150px / 2 ), calc( 115px / 2 ));
+        }
+
+        .uk-navbar-container {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: calc( 50% - 50px );
+                border-bottom: 1px solid rgba(#FFF, .5);
+            }
+
+            &::before {
+                left: -15px;
+            }
+
+            &::after {
+                right: -15px;
+            }
+
+            // Logo
+            > div:nth-child(2) {
+                top: 60px;
+                left: calc( 50% - ( 75px / 2 ) );
+            }
+
+            // Nav Container
+            div:nth-child(1),
+            div:nth-child(3) {
+
+                .uk-navbar-nav > li > a {
+                    font-size: 13px;
+                    color: #FFF;
+                    text-transform: capitalize;
+                    height: 80px;
+                }
+
+                .uk-icon {
+                    position: relative;
+                    top: 0;
+                    left: 7px;
+                }
+
+                .uk-navbar-dropdown {
+                    background-color: transparent;
+                    margin-top: 0;
+                    padding: 0;
+                    border-radius: 0 0 5px 5px;
+                    box-shadow: none;
+                    overflow: hidden;
+
+                    .uk-navbar-dropdown-nav > li {
+                        background-color: rgba(#FFF, .10);
+                        -webkit-backdrop-filter: saturate(180%) blur(5px);
+                        backdrop-filter: saturate(180%) blur(5px);                        
+                    }
+
+                    .uk-navbar-dropdown-nav > li > a {
+                        font-size: 0.764rem;
+                        font-weight: 300;
+                        color: #FFF;
+                        text-transform: capitalize;
+                        padding: 12px 24px;
+                        margin: 0;
+
+                        &:focus,
+                        &:hover {
+                            background-color: $default;
+                            color: rgba(#FFF, .80);
+                        }
+                    }
+                }
+
+            }
+        }
+
+    } // end @media
+
+    @media ( min-width: 1200px ) {
+        height: 95px;
+        padding: 0 40px;
+
+        .uk-logo {
+            @include size(150px, 115px);
+        }
+
+        .uk-navbar-container {
+
+            &::before {
+                left: -40px;
+            }
+
+            &::after {
+                right: -40px;
+            }
+
+            // Logo
+            > div:nth-child(2) {
+                top: 55px;
+                left: calc( 50% - 75px );
+            }
+
+            // Nav Container
+            div:nth-child(1),
+            div:nth-child(3) {
+
+                .uk-navbar-nav > li > a {
+                    font-size: 15px;
+                    height: 95px;
+                    padding: 0 20px;
+                }
+
+                .uk-navbar-dropdown {
+                    .uk-navbar-dropdown-nav > li {
+                        margin-top: 1px;
+                    }
+
+                    .uk-navbar-dropdown-nav > li > a {
+                        font-size: 15px;
+                    }
+                }
+
+            }
+
+        }
+
+    } // end @media
+
+}
