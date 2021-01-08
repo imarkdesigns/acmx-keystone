@@ -28,6 +28,8 @@
                 <h4>Stay Informed <br> <small>Subscribe to receive periodic news from Keystone</small></h4>
                 <?php echo do_shortcode( '[wpforms id="37"]' ); ?>
             </div>
+
+            <div class="footer-logo"></div>
         </div>
         <div class="dg-footer-legal">
             <div class="dg-footer-legal-copyright">Copyright 2020. Keystone Mortgage Corp. All Rights Reserved.</div>
